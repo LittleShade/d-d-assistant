@@ -15,7 +15,7 @@ def viewmenu(pos):
         reader=tk.Toplevel()
         reader.title=docName
         text=scrolledtext.ScrolledText(master=reader)
-        text.insert(tk.END, *info)
+        text.insert(tk.END, info)
         text.pack()
 
     #get current dir and campaignss
