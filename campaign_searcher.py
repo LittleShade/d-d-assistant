@@ -44,6 +44,7 @@ def searchmenu():
     def open_button_clicked():
         """  Handle open button click event 
         """
+        root.destroy()
 
     #set up open button    
 

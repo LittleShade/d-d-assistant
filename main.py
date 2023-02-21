@@ -2,10 +2,11 @@ import tkinter as tk
 from tkinter import ttk
 import os
 import campaign_searcher as cs
+import campaign_creation as cc
 
 # root window
 root = tk.Tk()
-root.title('Temperature Converter')
+root.title('Tabletop Assistant')
 root.geometry('150x70')
 
 
@@ -24,7 +25,7 @@ root.grid_columnconfigure(0, weight=1)
 def create_button_clicked():
     """  Handle create button click event 
     """
-    os.system("campaign_creator.py")
+    cc.create()
 
 #create button set up
 
