@@ -42,6 +42,14 @@ def create():
             pos=os.getcwd()
             newDir = pos + "\\campaigns\\"+name
             os.mkdir(newDir)
+            newDir = pos + "\\campaigns\\"+name+"\\characters"
+            os.mkdir(newDir)
+            newDir = pos + "\\campaigns\\"+name+"\\NPCs"
+            os.mkdir(newDir)
+            newDir = pos + "\\campaigns\\"+name+"\\Settings"
+            os.mkdir(newDir)
+            newDir = pos + "\\campaigns\\"+name+"\\Encounters"
+            os.mkdir(newDir)
             root.destroy()
 
 

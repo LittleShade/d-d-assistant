@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import os
+import campaign_viewer as cv
 
 def searchmenu():
 
@@ -25,8 +26,8 @@ def searchmenu():
     options = {'padx': 5, 'pady': 5}
 
     # campaign label
-    temperature_label = ttk.Label(frame, text='pick a campaign')
-    temperature_label.grid(column=0, row=0, sticky='W', **options)
+    campaign_label = ttk.Label(frame, text='pick a campaign')
+    campaign_label.grid(column=0, row=0, sticky='W', **options)
 
     # campaign entry
     try:
@@ -44,6 +45,13 @@ def searchmenu():
     def open_button_clicked():
         """  Handle open button click event 
         """
+        pos=os.getcwd()
+        selection=campaign.get()
+        selection=selection.lstrip("('")
+        selection=selection.rstrip("',)")
+        newpos=pos+ "\\campaigns\\"+selection
+        existing_campaigns=os.listdir(newpos)
+        cv.viewmenu(newpos)
         root.destroy()
 
     #set up open button    
@@ -52,9 +60,6 @@ def searchmenu():
     convert_button.grid(column=2, row=0, sticky='W')
     convert_button.configure(command=open_button_clicked)
 
-    # result label
-    result_label = ttk.Label(frame)
-    result_label.grid(row=1, columnspan=3)
 
     # add padding to the frame and show it
     frame.grid(padx=10, pady=10)
