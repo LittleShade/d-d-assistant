@@ -3,6 +3,10 @@ from tkinter import ttk
 from tkinter import scrolledtext
 import os
 
+# field options
+options = {'padx': 5, 'pady': 5}
+
+
 def viewmenu(pos):
 
     # open button action
@@ -33,8 +37,7 @@ def viewmenu(pos):
     frame = ttk.Frame(root)
 
 
-    # field options
-    options = {'padx': 5, 'pady': 5}
+
 
 ###########################################################################
 
@@ -270,11 +273,11 @@ def viewmenu(pos):
     #new encounter button pressed
 
     def new_Encounter_button_clicked():
-        """handle new NPC button clicked
+        """handle new encounter button clicked
         """
         #make top level
         newEncounter= tk.Toplevel()
-        newEncounter.title("new NPC")
+        newEncounter.title("new encounter")
 
         #make label for entry
         title_label= ttk.Label(master=newEncounter,text="Enter encounter name:")
